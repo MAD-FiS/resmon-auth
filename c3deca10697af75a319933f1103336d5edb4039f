@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "36c1c9e7_75b9150a",
+        "filename": "src/app.db",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-09T20:58:53Z",
+      "side": 0,
+      "message": "hmmm... a moze dobrym pomysłem byłoby włożyć plik db do innego folderu niż src ?",
+      "revId": "c3deca10697af75a319933f1103336d5edb4039f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}

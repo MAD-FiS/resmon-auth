@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "05b08419_6a638521",
+        "filename": "src/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-09T20:58:53Z",
+      "side": 1,
+      "message": "czy moduł \"db\" wymaga tego aby te pola były statyczne zamiast zwykłe ?",
+      "range": {
+        "startLine": 8,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 14
+      },
+      "revId": "2a6933024940f19a3d13c76336975c6f3eb26152",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d68978ef_fe0735b1",
+        "filename": "src/run.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-09T20:58:53Z",
+      "side": 1,
+      "message": "if __name__\u003d\u003d\"__main__\":\n    \u003creszta poniższego kodu oprócz importów ?\u003e",
+      "revId": "2a6933024940f19a3d13c76336975c6f3eb26152",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5164edc5_114ce84b",
+        "filename": "src/run.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-09T20:58:53Z",
+      "side": 1,
+      "message": "proszę przerzuć to na początek pliku (jeśli jest to możliwe);\nplus dodatkowo proszę daj jeden import per moduł:\nimport sdfsdfdfs\nimport sdfsdfsdf\nimport sdfsdfdsf",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "2a6933024940f19a3d13c76336975c6f3eb26152",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
