@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
@@ -9,6 +9,9 @@ api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'some-secret-string'
+app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
+
+
 
 db = SQLAlchemy(app)
 
@@ -16,15 +19,13 @@ db = SQLAlchemy(app)
 def create_tables():
     db.create_all()
 
-app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
 jwt = JWTManager(app)
 
 
+from src.run import app
+import src.models
+import src.views
 
-import src.views, src.models, src.resources
 
-api.add_resource(src.resources.UserRegistration, '/registration')
-api.add_resource(src.resources.UserLogin, '/login')
-api.add_resource(src.resources.SecretResource, '/secret')
 
 app.run()

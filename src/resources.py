@@ -53,5 +53,5 @@ class SecretResource(Resource):
     @jwt_required
     def get(self):
         return {
-            'answer': 444
+            'valid': True
         }
