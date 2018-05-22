@@ -67,3 +67,11 @@ Endpoint /secret zwraca json w postaci: {"valid":True} w przypadku przesłania z
 
 Korzystając z biblioteki obsługującej JWT, skonfigurować ją tak aby korzystała z tego samego klucza prywatnego. 
 Za jej pomocą sprawdzić czy otrzymany token JWT jest "valid" czy nie.
+
+7. Użyte techologie.
+
+Python 3.6
+Flask 0.12.2
+Flask-JWT-Extended 3.7.2
+Flask-RESTful 0.3.6
+Flask-SQLAlchemy 2.3.2
