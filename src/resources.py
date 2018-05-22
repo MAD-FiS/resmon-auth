@@ -1,3 +1,4 @@
+import flask
 from flask_restful import Resource, reqparse
 from src.models import UserModel
 from flask_jwt_extended import create_access_token, jwt_required
@@ -31,6 +32,13 @@ class UserRegistration(Resource):
         except:
             return {'message': 'Something went wrong'}, 500
 
+    def option(self):
+        resp = flask.Response("Foo bar baz")
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Headers']: 'Content-Type,Accept,Origin,Authorization'
+        resp.headers['Access-Control-Allow-Methods']: 'GET,POST,PUT,DELETE,OPTIONS'
+        return resp
+
 
 class UserLogin(Resource):
     def post(self):
@@ -48,6 +56,12 @@ class UserLogin(Resource):
             }
         else:
             return {'message': 'Wrong credentials'}
+    def option(self):
+        resp = flask.Response("Foo bar baz")
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Headers']: 'Content-Type,Accept,Origin,Authorization'
+        resp.headers['Access-Control-Allow-Methods']: 'GET,POST,PUT,DELETE,OPTIONS'
+        return resp
 
 class SecretResource(Resource):
     @jwt_required
@@ -55,3 +69,9 @@ class SecretResource(Resource):
         return {
             'valid': True
         }
+    def option(self):
+        resp = flask.Response("Foo bar baz")
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Headers']: 'Content-Type,Accept,Origin,Authorization'
+        resp.headers['Access-Control-Allow-Methods']: 'GET,POST,PUT,DELETE,OPTIONS'
+        return resp
