@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c2ffa94_cd266c9e",
+        "filename": "src/resources.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1013791
+      },
+      "writtenOn": "2018-05-22T21:43:49Z",
+      "side": 1,
+      "message": "Grzesiek, czy to pójdzie też do np. GET-a? Wszystkie endpointy i wszystkie metody muszą to mieć (tzn. te 3 nagłówki), dodatkowo oprócz OPTION",
+      "revId": "4a089ea6bcb846ae361a5e2ff97d78a1b59b878a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
