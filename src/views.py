@@ -1,4 +1,4 @@
-from src.run import app, api
+from run import app, api
 from flask import jsonify
 import src.resources
 

@@ -22,7 +22,7 @@ def create_tables():
 jwt = JWTManager(app)
 
 
-from src.run import app
+from run import app
 import src.models
 import src.views
 
