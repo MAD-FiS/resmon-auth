@@ -12,20 +12,18 @@ app.config['SECRET_KEY'] = 'some-secret-string'
 app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
 
 
-
 db = SQLAlchemy(app)
+
 
 @app.before_first_request
 def create_tables():
     db.create_all()
 
-jwt = JWTManager(app)
 
+jwt = JWTManager(app)
 
 from run import app
 import src.models
 import src.views
-
-
 
 app.run()
