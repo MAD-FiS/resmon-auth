@@ -38,9 +38,9 @@ class UserRegistration(Resource):
     def option(self):
         resp = flask.Response("Foo bar baz")
         resp.headers['Access-Control-Allow-Origin'] = '*'
-        resp.headers['Access-Control-Allow-Headers']:
+        resp.headers['Access-Control-Allow-Headers']:\
             'Content-Type,Accept,Origin,Authorization'
-        resp.headers['Access-Control-Allow-Methods']:
+        resp.headers['Access-Control-Allow-Methods']:\
             'GET,POST,PUT,DELETE,OPTIONS'
         return resp
 
@@ -67,9 +67,9 @@ class UserLogin(Resource):
     def option(self):
         resp = flask.Response("Foo bar baz")
         resp.headers['Access-Control-Allow-Origin'] = '*'
-        resp.headers['Access-Control-Allow-Headers']:
+        resp.headers['Access-Control-Allow-Headers']:\
             'Content-Type,Accept,Origin,Authorization'
-        resp.headers['Access-Control-Allow-Methods']:
+        resp.headers['Access-Control-Allow-Methods']:\
             'GET,POST,PUT,DELETE,OPTIONS'
         return resp
 
@@ -84,8 +84,8 @@ class SecretResource(Resource):
     def option(self):
         resp = flask.Response("Foo bar baz")
         resp.headers['Access-Control-Allow-Origin'] = '*'
-        resp.headers['Access-Control-Allow-Headers']:
+        resp.headers['Access-Control-Allow-Headers']:\
             'Content-Type,Accept,Origin,Authorization'
-        resp.headers['Access-Control-Allow-Methods']:
+        resp.headers['Access-Control-Allow-Methods']:\
             'GET,POST,PUT,DELETE,OPTIONS'
         return resp
