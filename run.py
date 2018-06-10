@@ -1,4 +1,3 @@
-
 from flask import Flask, jsonify
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
@@ -13,6 +12,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'some-secret-string'
 app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
 
+
 @app.after_request
 def apply_caching(resp):
     resp.headers['Access-Control-Allow-Origin'] = '*'
@@ -21,6 +21,7 @@ def apply_caching(resp):
     resp.headers['Access-Control-Allow-Headers'] = \
         'Origin, Accept, Content-Type, Authorization'
     return resp
+
 
 db = SQLAlchemy(app)
 
