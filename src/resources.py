@@ -27,7 +27,8 @@ class UserRegistration(Resource):
 
         if UserModel.find_by_username(data['username']):
             return create_response({'message':
-                                    'User {} already exists'.format(data['username'])})
+                                    'User {} already exists'
+                                    .format(data['username'])})
 
         new_user = UserModel(
             username=data['username'],
@@ -42,7 +43,7 @@ class UserRegistration(Resource):
                 'message': 'User {} was created'.format(data['username']),
                 'access_token': access_token
             })
-        except:
+        except Exception:
             return {'message': 'Something went wrong'}, 500
 
     def option(self):
@@ -56,7 +57,8 @@ class UserLogin(Resource):
 
         if not current_user:
             return create_response({'message':
-                                    'User {} doesn\'t exist'.format(data['username'])})
+                                    'User {} doesn\'t exist'
+                                     .format(data['username'])})
 
         if UserModel.verify_hash(data['password'], current_user.password):
             access_token = create_access_token(identity=data['username'],
