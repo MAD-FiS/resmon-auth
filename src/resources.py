@@ -26,8 +26,7 @@ class UserRegistration(Resource):
         data = parser.parse_args()
 
         if UserModel.find_by_username(data['username']):
-            return create_response({'message':
-                                        'User {} already exists'
+            return create_response({'message': 'User {} already exists'
                                    .format(data['username'])})
 
         new_user = UserModel(
