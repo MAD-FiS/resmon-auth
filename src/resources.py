@@ -14,9 +14,9 @@ parser.add_argument('password',
 def create_response(body):
     resp = Response(json.dumps(body))
     resp.headers['Access-Control-Allow-Origin'] = '*'
-    resp.headers['Access-Control-Allow-Methods'] =\
+    resp.headers['Access-Control-Allow-Methods'] = \
         'PUT, GET, POST, DELETE, OPTIONS'
-    resp.headers['Access-Control-Allow-Headers'] =\
+    resp.headers['Access-Control-Allow-Headers'] = \
         'Origin, Accept, Content-Type, Authorization'
     return resp
 
@@ -27,8 +27,8 @@ class UserRegistration(Resource):
 
         if UserModel.find_by_username(data['username']):
             return create_response({'message':
-                                    'User {} already exists'
-                                    .format(data['username'])})
+                                        'User {} already exists'
+                                   .format(data['username'])})
 
         new_user = UserModel(
             username=data['username'],
@@ -56,9 +56,8 @@ class UserLogin(Resource):
         current_user = UserModel.find_by_username(data['username'])
 
         if not current_user:
-            return create_response({'message':
-                                    'User {} doesn\'t exist'
-                                     .format(data['username'])})
+            return create_response({'message': 'User {} doesn\'t exist'
+                                   .format(data['username'])})
 
         if UserModel.verify_hash(data['password'], current_user.password):
             access_token = create_access_token(identity=data['username'],
