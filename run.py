@@ -11,9 +11,11 @@ def read_key(key_path):
         key = f.read()
     return key
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--key_path', type=str, default='jwt-secret-string')
-args = parser.parse_args()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--key_path', type=str, default='jwt-secret-string')
+    args = parser.parse_args()
+
 
 app = Flask(__name__)
 
@@ -22,7 +24,8 @@ api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'some-secret-string'
-app.config['JWT_SECRET_KEY'] = read_key(args.key_path)
+if __name__ == "__main__":
+    app.config['JWT_SECRET_KEY'] = read_key(args.key_path)
 
 
 @app.after_request
@@ -45,9 +48,10 @@ def create_tables():
 
 jwt = JWTManager(app)
 
-from run import app
-import src.models
-import src.views
+if __name__ == "__main__":
+    from run import app
+    import src.models
+    import src.views
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
