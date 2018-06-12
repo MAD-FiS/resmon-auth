@@ -18,5 +18,5 @@ ENV NAME World
 
 
 # Run app.py when the container launches
-ENTRYPOINT ["python3", "/app/run.py"]
+ENTRYPOINT ["python3", "/app/run.py", "--key_path", "key_example.txt"]
 
