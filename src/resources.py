@@ -11,8 +11,8 @@ parser.add_argument('password',
                     help='This field cannot be blank', required=True)
 
 
-def create_response(body):
-    resp = Response(json.dumps(body))
+def create_response(body, status=None):
+    resp = Response(json.dumps(body), status=status)
     resp.headers['Access-Control-Allow-Origin'] = '*'
     resp.headers['Access-Control-Allow-Methods'] = \
         'PUT, GET, POST, DELETE, OPTIONS'
@@ -27,7 +27,7 @@ class UserRegistration(Resource):
 
         if UserModel.find_by_username(data['username']):
             return create_response({'message': 'User {} already exists'
-                                   .format(data['username'])})
+                                   .format(data['username'])}, 409)
 
         new_user = UserModel(
             username=data['username'],
@@ -41,9 +41,9 @@ class UserRegistration(Resource):
             return create_response({
                 'message': 'User {} was created'.format(data['username']),
                 'access_token': access_token
-            })
+            }, 201)
         except Exception:
-            return {'message': 'Something went wrong'}, 500
+            return create_response({'message': 'Something went wrong'}, 500)
 
     def option(self):
         return create_response({})
@@ -56,16 +56,16 @@ class UserLogin(Resource):
 
         if not current_user:
             return create_response({'message': 'User {} doesn\'t exist'
-                                   .format(data['username'])})
+                                   .format(data['username'])}, 404)
 
         if UserModel.verify_hash(data['password'], current_user.password):
             access_token = create_access_token(identity=data['username'],
                                                expires_delta=False)
             return create_response({
                 'message': 'Logged in as {}'.format(current_user.username),
-                'access_token': access_token})
+                'access_token': access_token}, 201)
         else:
-            return create_response({'message': 'Wrong credentials'})
+            return create_response({'message': 'Wrong credentials'}, 401)
 
     def option(self):
         return create_response({})
