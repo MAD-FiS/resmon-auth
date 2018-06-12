@@ -28,7 +28,8 @@ class TestGeneral(unittest.TestCase):
         self.assertTrue(('Access-Control-Allow-Methods',
                          'PUT, GET, POST, DELETE, OPTIONS') in headers_list)
         self.assertTrue(('Access-Control-Allow-Headers',
-                         'Origin, Accept, Content-Type, Authorization') in headers_list)
+                         'Origin, Accept, Content-Type, Authorization')
+                        in headers_list)
 
 
 if __name__ == '__main__':

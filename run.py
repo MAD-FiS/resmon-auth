@@ -11,6 +11,7 @@ def read_key(key_path):
         key = f.read()
     return key
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--key_path', type=str, default='jwt-secret-string')
