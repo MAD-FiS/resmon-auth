@@ -1,5 +1,13 @@
 # resmon-auth
 
+Zanim zaczniesz pracować z repozytorium resmon-auth:
+a) Wykonaj 'source ./resmon-auth-env.sh'
+
+Generowanie Dokumentacji:
+a) sh docgen.sh
+
+Uruchomienie testów:
+a) sh runtest.sh
 
 1. jak działa serwer autoryzacji?
 
