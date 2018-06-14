@@ -51,6 +51,7 @@ class UserRegistration(Resource):
 
 class UserLogin(Resource):
     def post(self):
+
         data = parser.parse_args()
         current_user = UserModel.find_by_username(data['username'])
 
