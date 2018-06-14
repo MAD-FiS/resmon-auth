@@ -1,13 +1,52 @@
 # resmon-auth
 
-Zanim zaczniesz pracować z repozytorium resmon-auth:
-a) Wykonaj 'source ./resmon-auth-env.sh'
+# Usage
 
-Generowanie Dokumentacji:
-a) sh docgen.sh
+```bash
+./resmon-auth [-h] [-k KEY_PATH] [-p PORT]
+```
 
-Uruchomienie testów:
-a) sh runtest.sh
+### Options
+| Option                                       | Default value | Description                                |
+| -------------------------------------------- |:-------------:| ------------------------------------------:|
+| **-h**, **--help**                           | ---           | show help message and exit the application |
+| **-k _KEY_PATH_**, **--key_path _KEY_PATH_** | secret.key    | Location where is stored secret key        |
+| **-p _PORT_**, **--port _PORT_**             | 5000          | Port on which the server is listening      |
+
+#Instalation
+We provide single file `install-auth.sh` which is used to install this application. It's enough that you just run it as following:
+```bash
+./install-auth.sh [--quiet]
+```
+Later you have to accept unpacking files. It's automatically accepted if you choose option _--quiet_.
+Application will be installed in the same place where script `install-auth.sh`
+
+#For developers
+
+You can run some scripts to make your developing process faster and more comfortable.
+All scripts can be executed in this way:
+```bash
+./scripts.sh SCRIPT_NAME
+```
+where `SCRIPT_NAME` can be as following:
+* `build` - it prepares file _install-auth.sh_ to use it later for installing this application
+* `docgen` - it generates documentation and puts it into _./docs/_ directory
+* `runtest` - it runs all tests available for this project in _./test/_ directory
+
+## Deployment on Docker
+You can develop this application on [Docker](https://docs.docker.com). It can be used to testing it in a clear environment. 
+At start you can make yourself sure that the file `install-auth.sh` is created by _build_ script.
+
+Then you can execute these two following commands:
+```bash
+docker build -t resmon-auth .
+```
+and:
+```bash
+docker run -p 5000:5000 -it resmon-auth
+```
+Then you can run there this application. 
+Authorization server will be reachable on port 5000 (default).
 
 1. jak działa serwer autoryzacji?
 

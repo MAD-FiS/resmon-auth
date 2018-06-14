@@ -5,10 +5,10 @@ FROM python:3.6
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-ADD . /app
+ADD ./install-auth.sh /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip3 install --trusted-host pypi.python.org -r requirements
+RUN /app/install-auth.sh --quiet
 
 # Make port 80 available to the world outside this container
 #EXPOSE 5000
@@ -18,5 +18,5 @@ ENV NAME World
 
 
 # Run app.py when the container launches
-ENTRYPOINT ["python3", "/app/run.py", "--key_path", "key_example.txt"]
+ENTRYPOINT ["/app/resmon-auth", "--port 5000"]
 
