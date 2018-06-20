@@ -10,13 +10,13 @@ import random
 
 def read_key(key_path):
     with open(key_path) as f:
-        key = f.read()
+        key = f.read().rstrip()
     return key
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('-k', '--key_path', type=str, default='secret.key')
+    parser.add_argument('-k', '--key_path', type=str, default='jwt.key')
     parser.add_argument('-p', '--port', type=int, default=5000)
     args = parser.parse_args()
 
