@@ -1,10 +1,22 @@
-# resmon-auth
+# ResMon-auth
+Repository for authorization server, which is part of ResMon software.
+
+**Very important** The given key file (_./data/jwt.key_) is just used in test environment.
+Please, don't use it in your production version!
+
+**Info!** All path existing in this file are considered 
+as being used in project/install root directory.
 
 # Usage
 
 ```bash
 ./resmon-auth [-h] [-k KEY_PATH] [-p PORT]
 ```
+
+**Info!** Key file has to be the same as in monitors 
+which use this authorization server to confirm identity of users.
+You have to generate key and to make sure that both this server and monitor 
+use the same version of file.
 
 ### Options
 | Option                                       | Default value | Description                                |
@@ -32,6 +44,8 @@ where `SCRIPT_NAME` can be as following:
 * `build` - it prepares file _install-auth.sh_ to use it later for installing this application
 * `docgen` - it generates documentation and puts it into _./docs/_ directory
 * `runtest` - it runs all tests available for this project in _./test/_ directory
+
+**Info!** If you need to use environment file manually, it is located in `./data` directory.
 
 ## Deployment on Docker
 You can develop this application on [Docker](https://docs.docker.com). It can be used to testing it in a clear environment. 
