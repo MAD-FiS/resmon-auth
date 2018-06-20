@@ -27,9 +27,6 @@ api = Api(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = hashlib.sha256(
-    str(random.getrandbits(256)).encode('utf-8')
-).hexdigest()
 
 if __name__ == "__main__":
     app.config['JWT_SECRET_KEY'] = read_key(args.key_path)
