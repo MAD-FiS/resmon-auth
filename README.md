@@ -1,4 +1,7 @@
-# resmon-auth
+# ResMon-auth
+Repository for authorization server, which is part of ResMon software.
+
+**Info!** If you need to use environment file manually, it is located in `./data` directory.
 
 # Usage
 
@@ -32,6 +35,8 @@ where `SCRIPT_NAME` can be as following:
 * `build` - it prepares file _install-auth.sh_ to use it later for installing this application
 * `docgen` - it generates documentation and puts it into _./docs/_ directory
 * `runtest` - it runs all tests available for this project in _./test/_ directory
+
+**Info!** If you need to use environment file manually, it is located in `./data` directory.
 
 ## Deployment on Docker
 You can develop this application on [Docker](https://docs.docker.com). It can be used to testing it in a clear environment. 
