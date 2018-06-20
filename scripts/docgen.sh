@@ -8,7 +8,7 @@ fi
 rm -rf ./docs
 mkdir ./docs/
 
-MODULES=`find -name '*.py' | sed -e 's/\//./g' | sed -e 's/\.\.//g' \
+MODULES=`find . -name '*.py' | sed -e 's/\//./g' | sed -e 's/\.\.//g' \
     | sed -e 's/\.py//g' | sed 's|.__init__||'`
 echo $MODULES
 

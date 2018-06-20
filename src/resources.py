@@ -21,6 +21,14 @@ def create_response(body, status=None):
     return resp
 
 
+class Index(Resource):
+    def get(self):
+        return create_response({'message': 'ResMon-auth v1.0'})
+
+    def option(self):
+        return create_response({})
+
+
 class UserRegistration(Resource):
     def post(self):
         data = parser.parse_args()
