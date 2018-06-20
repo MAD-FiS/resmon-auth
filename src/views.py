@@ -5,7 +5,7 @@ import src.resources
 
 @app.route('/')
 def index():
-    return jsonify({'message': 'Hello, World!'})
+    return jsonify({'message': 'ResMon-auth v1.0'})
 
 
 api.add_resource(src.resources.UserRegistration, '/registration')

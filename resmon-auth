@@ -1,6 +1,6 @@
 #!/bin/bash
 
 if [ -z ${RESMONAUTHENV+x} ]; then
-    source ./resmon-auth.env
+    source data/resmon-auth.env
 fi
 /usr/bin/env python3 ./src/run.py $@

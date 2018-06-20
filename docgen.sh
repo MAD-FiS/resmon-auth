@@ -2,7 +2,7 @@
 
 # Generates python documentation. Move html files to docs dictionary
 if [ -z ${RESMONAUTHENV+x} ]; then
-    source ./resmon-auth.env
+    source data/resmon-auth.env
 fi
 
 pydoc3 -w $(pydoc3 -k src)
