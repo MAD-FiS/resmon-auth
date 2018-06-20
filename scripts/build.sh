@@ -11,7 +11,8 @@ cat ./scripts/install.template > install-auth.sh
 echo "ARCHIVE_DATA:" >> install-auth.sh
 echo "- Install file is created"
 
-tar -czvf tmp.tar.gz src resmon-auth secret.key README.md requirements resmon-auth.env >> /dev/null
+ELEMENTS=`cat ./data/elements.txt`
+tar -czvf tmp.tar.gz $ELEMENTS >> /dev/null
 cat tmp.tar.gz >> install-auth.sh
 rm tmp.tar.gz
 echo "- Required data is compressed and included"

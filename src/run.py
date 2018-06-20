@@ -16,7 +16,7 @@ def read_key(key_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('-k', '--key_path', type=str, default='jwt.key')
+    parser.add_argument('-k', '--key_path', type=str, default='data/jwt.key')
     parser.add_argument('-p', '--port', type=int, default=5000)
     args = parser.parse_args()
 
