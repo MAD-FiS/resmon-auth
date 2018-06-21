@@ -46,12 +46,13 @@ These modules are required by this application. If you want for example run test
 you need to be sure that all of them are installed on your computer by `pip3`.
 You can use for it `./data/requirements` file.
 
-| Module name                            | Version             |
-| -------------------------------------- |:-------------------:|
-| colorama                               | 0.3.9               |
-| keyboard                               | 0.13.2              |
-| requests                               | 2.19.1              |
-| tabulate                               | 0.8.2               |
+| Module name              | Version   |
+| ------------------------ |:---------:|
+| flask                    | 0.12.2    |
+| flask_jwt_extended       | 3.7.2     |
+| Flask-RESTful            | 0.3.6     |
+| Flask-SQLAlchemy         | 2.3.2     |
+| passlib                  | 1.7.1     |
 
 ## Scripts
 
